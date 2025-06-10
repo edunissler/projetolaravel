@@ -73,6 +73,7 @@ class SuppliersController extends Controller
         //deleta o produto no banco
         $supplier->delete();
         return redirect('/suppliers')->with('success', 'Produto excluído com sucesso!');
+
     }
 
 
