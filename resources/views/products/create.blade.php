@@ -1,4 +1,4 @@
-<<<<<<< HEAD <x-app-layout>
+<x-app-layout>
     <x-slot name="header">
         <h3 class="text-center font-semibold text-gray-800 dark:text-gray-200 ">
             {{ __('Manutenção de produtos') }}
@@ -60,39 +60,4 @@
 
         </form>
     </div>
-    </x-app-layout>
-    =======
-    <form action="{{ url('products/new') }}" method="POST">
-        @csrf
-        <label>Nome:</label><br>
-        <input name="name" type="text" /><br>
-        <label>Descrição:</label><br>
-        <input name="description" type="textarea" /><br>
-        <label>Quantidade:</label><br>
-        <input name="quantity" type="number" /><br>
-        <label>Preço:</label><br>
-        <input name="price" type="number" /><br>
-        <label>Tipo:</label><br>
-        <!-- <input name="type_id" type="number" /><br> -->
-
-        <select name="type_id" id="">
-            <option selected>Selecione o TIPO</option>
-            @foreach($types as $type)
-                <option value="{{ $type->id }}">
-                    {{ $type->name }}
-                </option>
-            @endforeach
-        </select>
-
-        <input type="submit" value="Salvar" />
-
-        @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-
-        @endif
-    </form>
-    >>>>>>> 1a53910e60db93317b79fa9d85593f4074cf4f0d
+</x-app-layout>
