@@ -15,7 +15,7 @@ class SuppliersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tipo' => 'required',
+            'tipo' => 'required|max:1',
             'nome_razao' => 'required',
             'cpf_cnpj' => 'required',
             'telefone' => 'required',
