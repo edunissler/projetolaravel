@@ -56,6 +56,13 @@ class SuppliersController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'tipo' => 'required|max:1',
+            'nome_razao' => 'required',
+            'cpf_cnpj' => 'required',
+            'telefone' => 'required',
+        ]);
+
         $supplier = Supplier::find($request->id);
         $supplier->update([
             'tipo' => $request->tipo,

@@ -43,6 +43,10 @@ class TypesController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:2|max:50',
+        ]);
+
         $type = Type::find($request->id);
         $type->update([
             'name' => $request->name

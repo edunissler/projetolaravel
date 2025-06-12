@@ -66,9 +66,9 @@
                                     <a href="{{ url('/products/update', ['id' => $product->id]) }}">
                                         <x-primary-button class="bg-indigo-600 hover:bg-indigo-700">Editar</x-primary-button>
                                     </a>
-                                    <a href="{{ url('/products/delete', ['id' => $product->id]) }}">
-                                        <x-danger-button>Excluir</x-danger-button>
-                                    </a>
+
+                                    <x-confirm-button :href="url('/products/delete', ['id' => $product->id])" message="Deseja excluir este produto?" />
+
                                 </td>
                             </tr>
                         @endforeach
