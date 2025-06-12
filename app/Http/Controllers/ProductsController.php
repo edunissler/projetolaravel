@@ -69,6 +69,13 @@ class ProductsController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:2|max:50',
+            'quantity' => 'required|gt:0',
+            'price' => 'required|gt:0',
+            'type_id' => 'required|exists:types,id',
+        ]);
+
         $product = Product::find($request->id);
         $product->update([
             'name' => $request->name,

@@ -35,7 +35,7 @@
 
             <div>
                 <x-input-label for="price" :value="__('Preço')" />
-                <x-text-input class="w-full" type="number" name="price" />
+                <x-text-input class="w-full" type="number" name="price" step="0.01" />
             </div>
 
             <div>
