@@ -71,9 +71,9 @@
           <a href="{{ url('/suppliers/update', ['id' => $supplier->id]) }}">
             <x-primary-button class="bg-indigo-600 hover:bg-indigo-700">Editar</x-primary-button>
           </a>
-          <a href="{{ url('/suppliers/delete', ['id' => $supplier->id]) }}">
-            <x-danger-button>Excluir</x-danger-button>
-          </a>
+
+          <x-confirm-button :href="url('/suppliers/delete', ['id' => $supplier->id])" message="Deseja excluir este fornecedor?" />
+
           </td>
         </tr>
       @endforeach

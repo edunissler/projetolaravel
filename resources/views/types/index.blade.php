@@ -67,9 +67,9 @@
                                         <a href="{{ url('/types/update', ['id' => $type->id]) }}">
                                             <x-primary-button class="bg-indigo-600 hover:bg-indigo-700">Editar</x-primary-button>
                                         </a>
-                                        <a href="{{ url('/types/delete', ['id' => $type->id]) }}">
-                                            <x-danger-button>Excluir</x-danger-button>
-                                        </a>
+
+                                        <x-confirm-button :href="url('/types/delete', ['id' => $type->id])" message="Deseja excluir este tipo?" />
+
                                     </td>
                                 </tr>
                             @endforeach

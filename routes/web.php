@@ -6,9 +6,9 @@ use App\Http\Controllers\TypesController;
 use App\Http\Controllers\SuppliersController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -18,6 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/', [ProductsController::class, 'home'])->name('products');
+
 
     Route::get('/products/new', [ProductsController::class, 'create']);
     Route::post('/products/new', [ProductsController::class, 'store']);
